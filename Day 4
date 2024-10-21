@@ -1,0 +1,149 @@
+//CW
+import React from 'react'
+import { TextField,Autocomplete,Button, selectClasses } from '@mui/material'
+ const fruit=["Apple","Mango","PineApple","WaterMelon","Grapes","Jack","Strawberry"]
+
+ class Fruits extends React.Component{
+    constructor(props)
+    {
+        super(props);
+       this.state={
+         name:'',
+         selectFruit:null,
+         message:''
+        }
+    }
+    handleChange=(e)=>
+    {
+        this.setState({
+            name:e.target.value
+        })
+    }
+    handleSelect=(_,newvalue)=>{
+        this.setState({
+         selectFruit:newvalue
+        })
+    }
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        const{name,selectFruit}=this.state;
+        if(name&&selectFruit)
+        {
+            this.setState({
+                message:Hello ${name}!.. Yours favourite fruit is ${selectFruit}
+            })
+        }
+    }
+    render()
+    {
+        const { name,selectFruit,message}=this.state;
+        return(
+            <div style={{background:"aqua"}}>
+                <center>
+            <form onSubmit={this.handleSubmit}>
+           <TextField
+           label="Name"
+           value={name}
+           onChange={this.handleChange}
+           data-testid="name">
+
+           </TextField>
+           <Autocomplete
+           options={fruit}
+           value={selectFruit}
+           onChange={this.handleSelect}
+           renderInput={(params)=>(
+            <TextField {...params}
+            label="choose a fruit"
+            data-testid="autocomplete"/>
+           )}
+           data-testid="autocomplete">
+            
+           </Autocomplete>
+           <Button type="submit" variant='contained' color='primary'>Submit</Button>
+           {message && <h1>{message}</h1>}
+           </form>
+           </center>
+           </div>
+
+          
+        )
+    }
+ }
+ export default Fruits;
+//CY
+import React from "react";
+import { Divider, List,ListItem,ListItemText } from "@mui/material";
+const books=[
+  {
+    title:"The Holy Bible",
+    summary:"Religious text of Christianity,considered sacred and canonical"
+  },
+  {
+    title:"Quatations from Chairman Mao",
+    summary:"Colection of statements from speches and writings by Mao Zedong."
+  },
+  {
+    title:"Harry Potter series",
+    summary:"Fantasy novels by J.K Rowling following the life of a young wizard"
+  },
+  {
+    title:"The Lord of the Rings",
+    summary:"High-fantasy novel written by J.R.R. Tolkien,set in Middle-earth"
+  },
+  {
+    title:"To Kill a Mockingbird",
+    summary:"Novel by Harper Lee,dealing with racial injustice and moral growth"
+  }
+]
+const BookList=()=>
+{
+    return(
+ <List>
+    {books.map((val,ind)=>
+    <ListItem key={ind} divider={ind<books.length-1}>
+        <ListItemText primary={val.title}
+        secondary={val.summary}>
+           
+            </ListItemText>
+    </ListItem>)}
+ </List>
+    )
+}
+export default BookList;
+//PAH
+import React, { useState } from 'react'
+import { Dialog,DialogActions,DialogContentText,DialogTitle,DialogContent, Button, TextField } from '@mui/material'
+
+const Loginpage=()=>{
+    const[open,openchange]=useState(false);
+    const Openpopup=()=>{
+        openchange(true);
+    }
+    const Closepopup=()=>{
+        openchange(false);
+    }
+    return(
+        <div>
+            <center>
+                <h1 style={{color:"green"}}>Welcome to my Loginpage</h1>
+            <Button onClick={Openpopup}variant='contained' color="secondary">Login</Button>
+            <Dialog open={open} onClose={Closepopup}>
+           <DialogTitle>Welcome to Login</DialogTitle>
+           <DialogContent>
+            
+            <TextField label="User Name" type="text"></TextField>
+            <br></br>
+            <TextField label="password" type="password"></TextField>
+           </DialogContent>
+           <DialogActions>
+            <Button onClick={Closepopup}variant='contained' color='success'>OK</Button>
+            <Button onClick={Closepopup} variant='contained' color='error'>Close</Button>
+           </DialogActions>
+            </Dialog>
+            </center>
+        </div>
+    )
+}
+export  default Loginpage
+
