@@ -14,4 +14,72 @@ function cw1() {
 };
 
 export default cw1;
+//CW2
+import React from 'react';
+
+const Cw2=()=> {
+    return (
+        <div>
+            <p>This is World Functional Component</p>
+        </div>
+    )
+}
+export default Cw2;
+//CY1
+import React from "react";
+const Challenge=()=>
+{
+    const name1="Kabil";
+    const name2="Kabil";
+    const pri=name1==name2;
+    console.log(pri);
+    const object1={name:"Kabil"};
+    const object2={name:"Kabil"};
+    const ref=object1==object2;
+    console.log(ref);
+}
+const Cy=()=>
+{
+    return(
+        <div>
+            <button onClick={Challenge}>Click</button>
+        </div>
+    )
+}
+export default Cy;
+//PH1
+function fun(){
+    let age=18;
+    let name="kiran";
+    let setStatus=false;
+    let userDefault=undefined;
+    let reponseValue=null;
+    console.log(age+" "+name+" "+setStatus+" "+userDefault+" "+reponseValue);
+    let oldage=age;
+    age=25;
+    let status=setStatus;
+    setStatus=true;
+    console.log(age+" "+name+" "+setStatus+" "+userDefault+" "+reponseValue);
+
+}
+const Pah1=()=>
+{
+return(
+    <div>
+        <button onClick={fun}>click</button>
+    </div>
+);
+};
+export default Pah1;
+//PH2
+import React from 'react';
+
+const Ph2=()=> {
+    return (
+        <div>
+            <p>This is a team functional component</p>
+        </div>
+    )
+}
+export default Ph2;
 
