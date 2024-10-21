@@ -1,0 +1,169 @@
+//c1
+import React from 'react'
+
+const Class1=()=>
+  { return(
+  <div>
+    <h1>Hello,World</h1>
+  </div>
+);
+};
+export default Class1;
+//c2
+import React from 'react';
+const Day2class2 =()=>
+{
+        const pstyle = {
+          backgroundColor: 'lightblue',
+          padding: '10px',
+          color:'darkblue',
+          border:'1px solid blue',
+          borderradius:'5px'
+        };
+    
+    return(
+        <div style={pstyle}>
+            <h1 style={{color:"green"}}>Inline Style in JSX Example</h1>
+            <p style={{color:"darkblue",fontSize:"16px"}}>This is the paragraph with the inline Styles applied</p>
+        </div>
+    
+    );
+
+};
+export default Day2class2;
+//cy1
+import React from 'react';
+const Day2cy1=()=>{
+    const imgurl="https://cdn.pixabay.com/photo/2017/03/05/21/55/emoticon-2120024_1280.png";
+    const imgstyle={
+          
+    };
+    const dstyle={
+        backgroundColor: 'lightgrey',
+        width: '300px',
+        height: '200px',
+        padding: '100px',
+        border: '1px solid blue',
+       // textAlign: 'center',
+       // lineHeight: '150px'
+    };
+    return (
+      <center> <div style={dstyle}>
+        <h1><b><center>Smile Component</center></b></h1>
+        <h5><center>It is the functional component</center></h5>
+        <center><img src={imgurl} alt='Not found' height="100px" weight="100px" style={imgstyle}></img></center>
+        
+       </div></center>
+
+    );
+};
+export default Day2cy1;
+//DC1
+import React from 'react';
+const Day2dy1=()=>{
+    const imgurl="https://tse3.mm.bing.net/th?id=OIP.lhWQQ55idlTwQwmsq6q7IQHaFY&pid=Api&P=0&h=180";
+    const imgstyle={
+          
+    };
+    const dstyle={
+        backgroundColor: 'lightgrey',
+        width: '500px',
+        height: '400px',
+        padding: '100px',
+        border: '1px solid blue',
+      borderradius:'5px'
+    };
+    const d1style={
+
+        border :'1px solid black',
+        width: '300px',
+        height: '200px',
+        backgroundColor:'white',
+        borderradius:'5px'
+        
+    };
+    const d2style=
+    {
+        border :'1px solid black',
+        width: '300px',
+        height: '100px',
+        backgroundColor:'white',
+        borderradius:'5px'
+
+    };
+    return (
+      <center> <div style={dstyle}>
+        <h1>Car and Location Info</h1>
+        <div style={d1style}>
+        <h3><b><center>Tesla Model S</center></b></h3>
+       
+        
+        <center><img src={imgurl} alt='Not found' height="100px" weight="100px" style={imgstyle}></img></center>
+        </div>
+        <br></br>
+        <br></br>
+        <div style={d2style}>
+        <h4><center>Testla</center> </h4>
+        <h5><center>Palo Alto</center></h5>
+       </div>
+       </div></center>
+
+    );
+};
+export default Day2dy1;
+//pah1
+import React from 'react';
+
+const Day2pah1 = () => {
+const instyle={
+margintop:'100px',
+marginleft:'500px',
+padding:'10px'
+};
+const fstyle={
+  backgroundColor:"lightblue",
+  height:'400px',
+  width:'500px'
+};
+  const handleSubmit = (event) => {
+    event.preventDefault(); 
+    
+    const inputel1 = document.getElementById('in1');
+    const inputval1 = inputel1.value;
+    const inputel2 = document.getElementById('in2');
+    const inputval2 = inputel2.value;
+    const inputel3 = document.getElementById('in3');
+    const inputval3 = inputel3.value;
+
+    console.log('Name:', inputval1+" "+'Email: ',inputval2+" "+'Message: '+inputval3); 
+  };
+
+  return (
+    <center><div>
+      <h1>Form</h1>
+      <form onSubmit={handleSubmit} style={fstyle}>
+        <br></br>
+        <br></br>
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            id="in1" style={instyle}
+            required
+          />
+          <br></br>
+          <br></br>
+          <label>Email:</label>
+          <input type='email' id='in2' required style={instyle}></input>
+          <br></br>
+          <br></br>
+          <label>Message:</label>
+          <textarea placeholder="Enter the Message" rows={5} cols={20} id='in3' required style={instyle}></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div></center>
+  );
+};
+
+export default Day2pah1;
